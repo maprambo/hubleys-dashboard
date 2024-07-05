@@ -38,7 +38,7 @@
 
   function submit(e: SubmitEvent) {
     ;(e.target as HTMLFormElement).submit()
-    tick().then(() => (query = ''))
+    tick(100).then(() => (query = ''))
   }
 
   let wheelBlocked: boolean = false
