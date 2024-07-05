@@ -36,9 +36,9 @@
     if (searchUrl) selectedEngine = engines.find(eng => eng.search_url === searchUrl) || selectedEngine
   })
 
-  function submit(e: SubmitEvent) {
-    ;(e.target as HTMLFormElement).submit()
-    tick(100).then(() => (query = ''))
+  async function submit(e: SubmitEvent) {
+    await (e.target as HTMLFormElement).submit()
+    tick().then(() => (query = ''))
   }
 
   let wheelBlocked: boolean = false
